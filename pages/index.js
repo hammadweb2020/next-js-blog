@@ -1,8 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
 
+import axios from 'axios'
+import Card from 'components/Card'
 
-export default function Home() {
+export default function Home({posts}) {
+
   return (
     <div >
    
@@ -32,25 +33,11 @@ export default function Home() {
     <section className="blog-section mb-20 lg:mb-32">
          <div className="container mx-auto relative px-4 z-10">
             <div className="blog-infinite grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
-               <div className="blog-box flex justify-between flex-col rounded transition duration-500 hover:shadow-lg aos-init aos-animate" data-aos="fade-up">
-                  <div className="content-top">
-                     <div className="blog-image pmd:h-64 relative rounded overflow-hidden mb-6">
-                        <Image className="w-full md:h-64 object-cover" src="/images/5.jpg" width="419" height="256" alt="title" />
-                     </div>
-                     <div className="blog-content px-6">
-                        <h3 className="font-display text-xl text-blueGray-900 font-bold transition hover:text-indigo-500"><a href="/light/single">Mindfulness Activities for Kids &amp; Toddlers with NFT</a></h3>
-                        <div className="flex flex-wrap font-body text-sm text-blueGray-600 mt-3 mb-5">
-                           <p className="mr-4"><Image className="w-4 h-4 inline-block mr-1" src="/images/date-icon.svg"  width="16" height="16" alt="title" /> 02 Feb 2022</p>
-                         
-                        </div>
-                        <p className="font-body text-blueGray-600 mb-5">Poster to so only as who go accompany texts recommendation</p>
-                     </div>
-                  </div>
-                  <div className="content-bottom px-6 pb-6">
-                     <a className="readmore-btn font-body font-normal text-indigo-500 transition duration-500 hover:text-indigo-500 underline-hover" href="/light/single">Read More<Image className="inline-block w-3 ml-2 mb-1" src="/images/readmore-icon.svg"  width="12" height="13" alt="title" /></a>
-                  </div>
-               </div>
-            
+       
+            { posts.map(post =>(
+                <Card key={post._id} post={post} />
+
+              ))}
          
              
             </div>
@@ -58,16 +45,25 @@ export default function Home() {
          </div>
       </section>
 
-
-
-
-
-
-
-
-
-
-
     </div>
   )
+}
+
+
+export async function getServerSideProps(){
+
+                  const { API_URL } = process.env
+
+
+                  const res = await axios.get(`${API_URL}/posts`);
+                  const getdata = res.data;
+                  return {  props : {
+                    posts: getdata
+                  } };
+            
+
+
+         
+
+
 }
