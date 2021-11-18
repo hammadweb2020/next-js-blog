@@ -16,10 +16,11 @@ export default function Header({ navigations }) {
                </Link>
                <div className="w-full  lg:flex lg:items-center lg:w-auto">
                   <ul className="mobile-menu bg-white lg:bg-transparent shadow lg:shadow-none absolute lg:relative inset-x-0 hidden lg:flex lg:flex-grow items-center text-base text-blueGray-600 font-semibold mt-7 lg:mt-0 mobile-hover">
-              
+                  <li><Link href='/'><a className='p-4 flex items-center hover:text-indigo-500 transition duration-500' > Home</a></Link></li>
+
                                 { navigations.map(navigation =>(
 
-                                <li key={navigation.id}><Link href={navigation.slug}><a className='p-4 flex items-center hover:text-indigo-500 transition duration-500' > {navigation.Title} </a></Link></li>
+                                <li key={navigation.id}><Link as={`category/${navigation.slug}`} href="category/[slug]" ><a className='p-4 flex items-center hover:text-indigo-500 transition duration-500' > {navigation.Title} </a></Link></li>
 
                                 )) }
 
