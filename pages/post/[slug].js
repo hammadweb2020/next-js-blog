@@ -2,16 +2,19 @@
 import axios from 'axios'
 import getconfig from 'next/config'
 import SinglePost from 'components/SinglePost'
+import RightsideCategory from 'components/RightsideCategory'
 
-export default function Home({singleposts}) {
+export default function Home({singleposts, allcategories}) {
 
   return (
     <>
    
                  { singleposts.map(singlepost =>(
-                <SinglePost key={singlepost.id} singlepost={singlepost} />
+                <SinglePost key={singlepost.id} singlepost={singlepost} allcategories={allcategories} />
 
               ))}
+       
+
 </>
 
 
@@ -24,8 +27,15 @@ export async function getServerSideProps(context){
                   const { slug } = context.query
                   const res = await axios.get(`${publicRuntimeConfig.API_URL}/posts?slug=${slug}`);
                   const getdata = res.data;
+
+                  const allcategory = await axios.get(`${publicRuntimeConfig.API_URL}/categories`);
+                  const getcategories = allcategory.data;
+
+
+
                   return {  props : {
-                    singleposts: getdata
+                    singleposts: getdata,
+                    allcategories: getcategories
                   } };
       
 }
