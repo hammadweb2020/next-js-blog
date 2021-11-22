@@ -20,7 +20,7 @@ export default function Header({ navigations }) {
 
                                 { navigations.map(navigation =>(
 
-                                <li key={navigation.id}><Link as={`category/${navigation.slug}`} href="category/[slug]" ><a className='p-4 flex items-center hover:text-indigo-500 transition duration-500' > {navigation.Title} </a></Link></li>
+                                <li key={navigation.id}><Link as={`/category/${navigation.slug}`} href="/category/[slug]" ><a className='p-4 flex items-center hover:text-indigo-500 transition duration-500' > {navigation.Title} </a></Link></li>
 
                                 )) }
 

@@ -1,9 +1,26 @@
 import React from 'react'
 import Link from 'next/link'
 import moment from 'moment'
+import getconfig from 'next/config'
 import Image from 'next/image'
-export default function RightsideCategory(allcategories) {
-console.log(allcategories.Title);
+import axios from 'axios'
+export default function RightsideCategory({ allcategories }) {
+
+  
+/*
+    async function getNumber(slug){
+ 
+    const { publicRuntimeConfig } = getconfig()
+  const res =  await axios.get(`${publicRuntimeConfig.API_URL}/posts/count?categories.slug=${slug}`);
+    const getdata = res.data;
+//console.log(getdata);
+  
+
+
+
+}
+*/
+
     return (
         <>
 
@@ -16,8 +33,15 @@ console.log(allcategories.Title);
                      <div className="block">
 
                    
-                           <a href="/light/category"  className="flex justify-between border border-blueGray-300 hover:border-indigo-500 text-blueGray-600 hover:text-white font-body rounded py-3 px-4 mb-4 transition duration-500 hover:bg-indigo-500"><span></span> <span>24</span></a>
 
+
+                     { allcategories.map(allcategorie =>(
+                      <Link key={allcategorie.id} as={`/category/${allcategorie.slug}`} href="/category/[slug]"><a  className="flex justify-between border border-blueGray-300 hover:border-indigo-500 text-blueGray-600 hover:text-white font-body rounded py-3 px-4 mb-4 transition duration-500 hover:bg-indigo-500"><span>{allcategorie.Title}</span> <span></span></a></Link>
+)) }
+
+
+
+                           
 
 
                       
@@ -36,4 +60,7 @@ console.log(allcategories.Title);
         </>
     )
 }
+
+
+
 

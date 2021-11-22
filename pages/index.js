@@ -55,7 +55,7 @@ export async function getServerSideProps(){
                   const { API_URL } = process.env
 
 
-                  const res = await axios.get(`${API_URL}/posts`);
+                  const res = await axios.get(`${API_URL}/posts?_sort=published_at:DESC`);
                   const getdata = res.data;
                   return {  props : {
                     posts: getdata

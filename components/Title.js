@@ -11,7 +11,7 @@ const Title = ({singlepost}) => {
 
             <ul className="hero-breadcrumb font-body text-blueGray-600 flex flex-wrap items-center">
                <li className="flex items-center mr-2"><Link as="/" href="/"><a className="transition duration-500 hover:text-indigo-500 underline-hover" > Home</a></Link></li>
-               <li className="flex items-center mr-2"><Image className="w-3 h-3 inline-block mr-2" width="12" height="12" src="/images/right-arrow.svg" alt="title" /><Link as={`category/${singlepost.categories[0].slug}`} href="category/[slug]" ><a className="transition duration-500 hover:text-indigo-500 underline-hover ml-2" > {singlepost.categories[0].Title}</a></Link></li>
+               <li className="flex items-center mr-2"><Image className="w-3 h-3 inline-block mr-2" width="12" height="12" src="/images/right-arrow.svg" alt="title" /><Link as={`/category/${singlepost.categories[0].slug}`} href="/category/[slug]" ><a className="transition duration-500 hover:text-indigo-500 underline-hover ml-2" > {singlepost.categories[0].Title}</a></Link></li>
                <li className="flex items-center text-indigo-500 mr-2"><Image className="w-3 h-3 inline-block mr-2"  width="12" height="12"  src="/images/right-arrow.svg" alt="title" /><span className="ml-2"> {singlepost.Title}</span></li>
             </ul>
          </div>

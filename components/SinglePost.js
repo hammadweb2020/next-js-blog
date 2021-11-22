@@ -2,9 +2,10 @@ import React from 'react'
 import RightsideCategory from './RightsideCategory'
 import Title from './Title'
 import Longdesc from './Longdesc'
+import PopularPost from './PopularPost'
 
-const SinglePost = ({ singlepost, allcategories}) => {
-   console.log(allcategories)
+const SinglePost = ({ singlepost, allcategories, latestposts}) => {
+  
     return (
         <>
 
@@ -26,8 +27,11 @@ const SinglePost = ({ singlepost, allcategories}) => {
 
                <div className="lg:col-span-5 xl:col-span-4">
 
-                          
-                              <RightsideCategory allcategories={allcategories} />
+               <PopularPost latestposts={latestposts} /> 
+                <RightsideCategory allcategories={allcategories} />
+
+
+               
               
                </div>
 
