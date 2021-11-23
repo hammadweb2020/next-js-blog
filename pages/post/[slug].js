@@ -2,7 +2,7 @@
 import axios from 'axios'
 import getconfig from 'next/config'
 import SinglePost from 'components/SinglePost'
-import RightsideCategory from 'components/RightsideCategory'
+
 
 export default function Home({singleposts, allcategories, latestposts}) {
 
