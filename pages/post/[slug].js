@@ -10,6 +10,7 @@ export default function Home({singleposts, allcategories, latestposts}) {
     <>
    
                  { singleposts.map(singlepost =>(
+              
                 <SinglePost key={singlepost.id} singlepost={singlepost} allcategories={allcategories} latestposts={latestposts} />
 
               ))}
@@ -31,7 +32,7 @@ export async function getServerSideProps(context){
                   const allcategory = await axios.get(`${publicRuntimeConfig.API_URL}/categories`);
                   const getcategories = allcategory.data;
 
-                  const latestpost = await axios.get(`${publicRuntimeConfig.API_URL}/posts?_sort=published_at:DESC&_limit=5`);
+                  const latestpost = await axios.get(`${publicRuntimeConfig.API_URL}/posts?_sort=published_at:DESC&_limit=4`);
                   const getlatestpost = latestpost.data;
         
 

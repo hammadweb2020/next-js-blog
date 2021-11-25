@@ -11,7 +11,7 @@ export default function Header({ navigations }) {
             <nav className="flex items-center justify-between relative">
             <Link href="/">
                <a  className='flex items-center flex-shrink-0 mr-6'>
-               <Image className="h-10" src="/images/header-logo.svg" width="190" height="40" alt="title" />
+               <Image className="h-10" src="/images/header-logo.png" width="194" height="40" alt="title" />
                </a>
                </Link>
                <div className="w-full  lg:flex lg:items-center lg:w-auto">
