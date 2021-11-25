@@ -24,10 +24,6 @@ export default function RightsideCategory({ allcategories }) {
     return (
         <>
 
-
-
-
-
 <div className="bg-white rounded border border-blueGray-300 transition duration-500 hover:shadow-lg px-6 py-8 mb-14 aos-init aos-animate" data-aos="fade-up">
                      <h3 className="font-display text-3xl text-blueGray-900 font-bold mb-6">Categories </h3>
                      <div className="block">
