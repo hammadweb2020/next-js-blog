@@ -1,5 +1,6 @@
 const withPWA = require('next-pwa')
 const path = require('path')
+const runtimeCaching = require("next-pwa/cache");
 require('dotenv').config()
 
   module.exports = withPWA({
@@ -11,7 +12,8 @@ pwa: {
   dest: "public",
   register: true,
   skipWaiting: true,
-  skipWaiting: true,
+  runtimeCaching,
+  buildExcludes: [/middleware-manifest\.json$/, /_middleware\.js$/],
   disable: process.env.NODE_ENV === 'development',
 },
 
