@@ -1,6 +1,6 @@
 
 ## Demo
-Demo Link : [UAE Town Talk PWA Built in Next.js](uaetowntalk.vercel.app)
+Demo Link : [UAE Town Talk PWA Built in Next.js](https://uaetowntalk.vercel.app)
 
 If you are getting the Serverless error just refresh again it will work fine. We i using Heroku for Stapi serverless API.
 Heroku Web Dyno: If an app has a free web dyno, and that dyno receives no web traffic in a 30-minute period, it will sleep. In addition to the web dyno sleeping, the worker dyno (if present) will also sleep. 
