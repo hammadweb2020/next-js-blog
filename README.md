@@ -2,8 +2,7 @@
 ## Demo
 Demo Link : [UAE Town Talk PWA Built in Next.js](https://uaetowntalk.vercel.app)
 
-If you are getting the Serverless error just refresh again it will work fine.
-Heroku Web Dyno: If an app has a free web dyno, and that dyno receives no web traffic in a 30-minute period, it will sleep. In addition to the web dyno sleeping, the worker dyno (if present) will also sleep. 
+If you are getting the Serverless error just refresh the web page again it will work fine because I am using Stapi API on Heroku. Server will go to sleep after 30 minute if no one are using the app.
 
 ## Featured
   - Front-end developed in Next.js
